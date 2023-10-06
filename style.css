@@ -23,7 +23,10 @@
 
     --border-width: 4px;
     --border-color: #ddd;
+    --slider-color: #0af;
 }
+
+/* Border Popup */
 .btn-border-popup::before{
     content: '';
     position: absolute;
@@ -39,4 +42,25 @@
     right: calc(var(--border-width) * -2);
     bottom: calc(var(--border-width) * -2);
     left: calc(var(--border-width) * -2);
+}
+
+/* Background Slider */
+.btn-background-slider::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--slider-color);
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.btn-background-slider{
+    z-index: 1;
+}
+.btn-background-slider:hover::before{
+    transform: scaleX(1);
 }
